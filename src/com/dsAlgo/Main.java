@@ -1,4 +1,4 @@
-package com.company;
+package com.dsAlgo;
 
 public class Main {
 
