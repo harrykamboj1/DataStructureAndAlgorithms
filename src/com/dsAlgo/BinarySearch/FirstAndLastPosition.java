@@ -1,4 +1,4 @@
-package com.dsAlgo.Array;
+package com.dsAlgo.BinarySearch;
 
 import java.util.Arrays;
 
