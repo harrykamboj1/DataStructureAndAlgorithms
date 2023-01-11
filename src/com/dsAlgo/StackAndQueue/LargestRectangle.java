@@ -34,7 +34,10 @@ public class LargestRectangle {
         Stack < Integer > st = new Stack < > ();
         int leftSmall[] = new int[n];
         int rightSmall[] = new int[n];
+
+        // To find Left Small at each index And Store in leftSmall Array
         for (int i = 0; i < n; i++) {
+            // if element in stack is greater than the current height index remove that element.
             while (!st.isEmpty() && heights[st.peek()] >= heights[i]) {
                 st.pop();
             }
