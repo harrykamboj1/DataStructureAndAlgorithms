@@ -18,7 +18,7 @@ public class PreOrderTraversal {
         if (root == null) {
             return list;
         }
-        list.add(root.val);
+         list.add(root.val);
 
         list.addAll(preorderTraversal(root.left));
         list.addAll(preorderTraversal(root.right));
