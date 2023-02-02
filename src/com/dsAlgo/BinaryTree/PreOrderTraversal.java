@@ -20,7 +20,7 @@ public class PreOrderTraversal {
         }
          list.add(root.val);
 
-        list.addAll(preorderTraversal(root.left));
+         list.addAll(preorderTraversal(root.left));
         list.addAll(preorderTraversal(root.right));
 
 
