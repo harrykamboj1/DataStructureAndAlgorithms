@@ -2,7 +2,7 @@ package com.dsAlgo.BinaryTree;
 
 public class TreeNode {
 
-    int val;
+    Integer val;
     TreeNode left;
     TreeNode right;
 
