@@ -6,6 +6,7 @@ public class RecursionPractice2 {
         System.out.println(countZeros(0));
         System.out.println(countSteps(123));
         System.out.println(numberOfSteps(14));
+        System.out.println(isPalindrome(-121));
     }
 //    reverse a number and palindrome
     static int sum;
@@ -21,6 +22,25 @@ public class RecursionPractice2 {
     static boolean palindrome(int n){
        return n==reverse(n);
     }
+    public static boolean isPalindrome(int x) {
+        if(x<0){return false;}
+        return x == reverse1(x);
+    }
+    public static int reverse1(int x){
+        int digits = (int)(Math.log10(x))+1;
+        return helper(x, digits);
+    }
+    public static int helper(int x, int digits){
+        if(x%10==x){
+            return x;
+        }
+
+
+        int rem = x%10;
+        return rem*(int)(Math.pow(10,digits-1))+helper(x/10, digits-1);
+    }
+
+
 //    count zeros
     static int count = 0;
     static int countZeros(int n){
