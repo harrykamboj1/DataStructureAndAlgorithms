@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class RecursionPractice3 {
     public static void main(String[] args) {
         int[]arr= {1,2,4,8,9,4,13,12};
+        int[] arr2 = {5,6,7,8,9,1,2,3};
         System.out.println(isSorted(arr, arr.length));
         System.out.println(sorted(arr,0));
         System.out.println(linearSearch(arr,18));
@@ -13,6 +14,8 @@ public class RecursionPractice3 {
         findAllIndex(arr,4,0, list);
         System.out.println(list);
         System.out.println(findAllIndex2(arr,4,0));
+        int ans = rotatedBinarySearch(arr2, 6, 0 , arr.length-1);
+        System.out.println(ans);
     }
 //    array is sorted or not without recursion
     static boolean isSorted(int[]arr, int n) {
@@ -76,5 +79,26 @@ public class RecursionPractice3 {
         ArrayList<Integer> ansFromBelowFunCalls = findAllIndex2(arr,target,index+1);
         list.addAll(ansFromBelowFunCalls);
         return list;
+    }
+//    rotated binary search
+    static int rotatedBinarySearch(int[]arr, int target, int start, int end){
+        if(start > end){
+            return -1;
+        }
+        int mid = start + (end - start)/2;
+        if(target == arr[mid]){
+            return mid;
+        }
+        if(arr[start] <= arr[mid]){
+            if(target>= arr[start] && target <= arr[mid]){
+                return rotatedBinarySearch(arr, target,start,mid-1);
+            }else{
+                return rotatedBinarySearch(arr, target,mid +1,end);
+            }
+        }
+        if(target>=arr[mid] && target <=arr[end]){
+            return rotatedBinarySearch(arr, target,mid +1,end);
+        }
+        return rotatedBinarySearch(arr, target,start,mid-1);
     }
 }
