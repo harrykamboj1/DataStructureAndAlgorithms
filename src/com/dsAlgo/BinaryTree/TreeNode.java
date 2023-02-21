@@ -2,14 +2,14 @@ package com.dsAlgo.BinaryTree;
 
 public class TreeNode {
 
-    Integer val;
-    TreeNode left;
-    TreeNode right;
+  public  Integer val;
+    public   TreeNode left;
+    public  TreeNode right;
 
     TreeNode() {
     }
 
-    TreeNode(int val) {
+    public TreeNode(int val) {
         this.val = val;
     }
 
