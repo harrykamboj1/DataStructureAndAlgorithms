@@ -63,6 +63,7 @@ public class CheckForCycleUsingBFS {
                     q.add(new Node(it,node1));
                     visited[it] = true;
                 }// if adjacent node is visited and is not its own parent node
+                //The parent will be needed so that we don’t do a backward traversal in the graph, we just move frontwards.
                 else if(par != it) return true;
             }
         }
