@@ -13,9 +13,11 @@ public class PascalTriangle {
         for (int i = 0; i < numRows; ++i) {
             row = new ArrayList<Integer>();
             for (int j = 0; j <= i; ++j) {
+                // if Row is equal to first and last then add simply 1
                 if (j == 0 || j == i) {
                     row.add(1);
                 } else {
+                    // add the value of the above row
                     row.add(col.get(j - 1) + col.get(j));
                 }
             }
