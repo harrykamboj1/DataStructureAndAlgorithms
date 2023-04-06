@@ -8,8 +8,10 @@ public class TwoSum {
         int target = 9;
         int[] ans= twoSum(arr,target);
         int[] val= twoSum1(arr,target);
+        int[] a= twoSum2(arr,target);
         System.out.println(Arrays.toString(ans));
         System.out.println(Arrays.toString(val));
+        System.out.println(Arrays.toString(a));
     }
     //brute force solution using two pointers
     static int[] twoSum(int[] nums, int target){
@@ -36,5 +38,22 @@ public class TwoSum {
             map.put(nums1[i],i);
         }
         return array;
+    }
+    static int[] twoSum2(int[] nums,int target){
+        int[] res = new int[2];
+        Arrays.sort(nums);
+        int left = 0;
+        int right = nums.length-1;
+
+        while (left>right){
+            int sum = nums[left] + nums[right];
+            if(sum == target){
+                res[0] = nums[left];
+                res[1] = nums[right];
+            }
+            else if(sum<target)left++;
+            else right--;
+        }
+        return res;
     }
 }
